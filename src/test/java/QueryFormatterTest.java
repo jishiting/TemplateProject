@@ -19,8 +19,8 @@ public class QueryFormatterTest {
     }
 
     @Test
-    public void should_escape_double_dash() {
-        String value = QueryFormatter.format("Some\\-ting");
-        assertEquals("some\\-ting",value);
+    public void should_escape_multiple_dash() {
+        String value = QueryFormatter.format("Some\\-ting\\-no");
+        assertEquals("some\\-ting\\-no",value);
     }
 }
