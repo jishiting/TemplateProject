@@ -3,6 +3,6 @@
  */
 public class QueryFormatter {
     public static String format(String something) {
-        return something.toLowerCase().replace("-","\\-");
+        return something.toLowerCase().replace("-","\\-").replace("\\\\","\\");
     }
 }
