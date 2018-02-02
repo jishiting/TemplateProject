@@ -11,4 +11,10 @@ public class QueryFormatterTest {
         String value =QueryFormatter.format("Something");
         assertEquals("something",value);
     }
+
+    @Test
+    public void should_escape_dash() {
+        String value = QueryFormatter.format("Some-thing");
+        assertEquals("some\\-thing",value);
+    }
 }
