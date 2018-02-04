@@ -17,4 +17,16 @@ public class QueryFormatter1Test {
         String value = QueryFormatter1.format("Some-thing");
         assertEquals("some\\-thing",value);
     }
+
+    @Test
+    public void should_escape_contain_quoted_dash() {
+        String value = QueryFormatter1.format("Some\\-thing");
+        assertEquals("some\\-thing",value);
+    }
+
+    @Test
+    public void should_not_change_with_quoted_dash() {
+        String value = QueryFormatter1.format("\"Something\"");
+        assertEquals("\"Something\"",value);
+    }
 }
