@@ -8,7 +8,7 @@ import static junit.framework.TestCase.assertEquals;
 public class QueryFormatterTest {
     @Test
     public void should_transform_param_value_to_lowercase() {
-        String value =QueryFormatter.format("Something");
+        String value = QueryFormatter.format("Something");
         assertEquals("something",value);
     }
 
