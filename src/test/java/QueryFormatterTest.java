@@ -9,24 +9,24 @@ public class QueryFormatterTest {
     @Test
     public void should_transform_input_info_to_lowercase() {
         String value = QueryFormatter.format("Something");
-        assertEquals("something",value);
+        assertEquals("something", value);
     }
 
     @Test
     public void should_escape_dash() {
         String value = QueryFormatter.format("Some-thing");
-        assertEquals("some\\-thing",value);
+        assertEquals("some\\-thing", value);
     }
 
     @Test
     public void should_escape_multiple_dash() {
         String value = QueryFormatter.format("Some\\-ting\\-no");
-        assertEquals("some\\-ting\\-no",value);
+        assertEquals("some\\-ting\\-no", value);
     }
 
     @Test
     public void should_not_change_with_quoted_dash() {
         String value = QueryFormatter.format("\"Some-thing\"");
-        assertEquals("\"Some-thing\"",value);
+        assertEquals("\"Some-thing\"", value);
     }
 }
