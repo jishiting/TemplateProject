@@ -6,27 +6,33 @@ import static junit.framework.TestCase.assertEquals;
  * Created by shitingji on 2018/2/2.
  */
 public class QueryFormatterTest {
+
+
     @Test
     public void should_transform_input_info_to_lowercase() {
         String actualValue = QueryFormatter.format("Something");
-        assertEquals("something", actualValue);
+        String expectedValue = "something";
+        assertEquals(expectedValue, actualValue);
     }
 
     @Test
     public void should_escape_dash() {
         String actualValue = QueryFormatter.format("Some-thing");
-        assertEquals("some\\-thing", actualValue);
+        String expectedValue = "some\\-thing";
+        assertEquals(expectedValue, actualValue);
     }
 
     @Test
     public void should_escape_multiple_dash() {
         String actualValue = QueryFormatter.format("Some\\-ting\\-no");
-        assertEquals("some\\-ting\\-no", actualValue);
+        String expectedValue = "some\\-ting\\-no";
+        assertEquals(expectedValue, actualValue);
     }
 
     @Test
     public void should_not_change_with_quoted_dash() {
         String actualValue = QueryFormatter.format("\"Some-thing\"");
-        assertEquals("\"Some-thing\"", actualValue);
+        String expectedValue = "\"Some-thing\"";
+        assertEquals(expectedValue, actualValue);
     }
 }
